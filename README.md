@@ -32,8 +32,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/Yulong-Cauli/encryption-then-compression-jpeg.git
-cd encryption-then-compression-jpeg
+git clone https://github.com/Yulong-Cauli/Jetson-Nano-Vision.git
+cd Jetson-Nano-Vision
 
 # 运行自动配置脚本
 chmod +x setup_jetson.sh
