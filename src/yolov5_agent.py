@@ -18,7 +18,7 @@ from typing import List, Tuple, Optional, Dict
 from dataclasses import dataclass
 
 # Import TensorRT engine
-from trt_engine import TensorRTInferenceEngine
+from src.trt_engine import TensorRTInferenceEngine
 
 # Setup logging
 logging.basicConfig(
@@ -341,7 +341,7 @@ class YOLOv5Agent:
         outputs = self.engine.infer(input_tensor)
         
         # Postprocess
-        detections = self.postprocess(outputs[0], scale, pad, image.shape[:2])
+        detections = self.postprocess(outputs[-1], scale, pad, image.shape[:2])
         
         # Update FPS
         self.fps_counter.update()

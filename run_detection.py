@@ -5,6 +5,9 @@ YOLOv5 模型转换和检测演示脚本
 YOLOv5 Model Conversion and Detection Demo Script
 """
 
+import pycuda.driver as cuda
+import pycuda.autoinit
+
 import os
 import sys
 import argparse
@@ -166,6 +169,10 @@ def run_detection_demo(engine_path: str, source: str = "0", display: bool = Fals
         logger.error("Failed to open video source")
         sys.exit(1)
     
+    # === 在它上面加入这两行 ===
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    out = cv2.VideoWriter('result.mp4', fourcc, 30.0, (1280, 720))
+
     logger.info("Starting detection loop... Press 'q' to quit")
     
     frame_count = 0
@@ -181,6 +188,7 @@ def run_detection_demo(engine_path: str, source: str = "0", display: bool = Fals
             
             # Draw
             result = agent.draw_detections(frame, detections)
+            out.write(result)
             
             # Display
             if display:
@@ -198,6 +206,7 @@ def run_detection_demo(engine_path: str, source: str = "0", display: bool = Fals
     
     finally:
         cap.release()
+        out.release()
         if display:
             cv2.destroyAllWindows()
         agent.cleanup()

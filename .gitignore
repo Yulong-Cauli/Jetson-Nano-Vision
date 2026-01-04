@@ -205,3 +205,47 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ignore models / engines / weights / outputs
+*.engine
+*.onnx
+*.pt
+*.pth
+*.t7
+*.ckpt
+*.tar
+*.zip
+*.mp4
+result.mp4
+weights/
+models/
+
+# Jetson / temp
+*.log
+*.tmp
+# Ignore build / temp / local wheels / swap
+*.whl
+*.log
+*.tmp
+*.swap
+swapfile
+
+# Torch wheel or other local packages
+torch-*.whl
+torch-*.whl.*
+
+# models / engines / outputs
+*.engine
+*.onnx
+*.pt
+*.pth
+*.t7
+*.ckpt
+*.mp4
+result.mp4
+weights/
+models/
+
+# YOLOv5 third-party repo (keep it untracked here; use submodule or external dependency)
+yolov5/
+src/yolov5/
