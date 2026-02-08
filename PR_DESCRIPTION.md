@@ -170,16 +170,3 @@ Expected performance on Jetson Nano: YOLOv5s @ 640x640 FP16 ~10-15 FPS.
 python3 run_detection.py --mode full --model yolov5s --source 0 --display
 ```
 
----
-
-## 使用说明 / Instructions
-
-请将上述内容复制到 PR 描述中，替换现有的英文描述。所有文档文件已经是中英双语的：
-
-Please copy the above content to the PR description to replace the existing English-only description. All documentation files are already bilingual:
-
-- ✅ `README_DETECTION.md` - 中英双语 / Bilingual
-- ✅ `IMPLEMENTATION_SUMMARY.md` - 中英双语 / Bilingual  
-- ✅ `docs/jetson_nano_setup.md` - 中英双语 / Bilingual
-- ✅ `examples/README.md` - 中英双语 / Bilingual
-- ✅ 代码注释 / Code comments - 中英双语 / Bilingual
